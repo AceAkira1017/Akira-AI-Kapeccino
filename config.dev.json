@@ -1,7 +1,7 @@
 {
   "facebookAccount": {
-    "email": "",
-    "password": "",
+    "email": "akirabot@somelora.com",
+    "password": "ace10179",
     "2FASecret": "",
     "i_user": "",
     "proxy": null,
@@ -12,13 +12,13 @@
   "antiInbox": false,
   "language": "en",
   "notesLanguage": "change to your language with ISO 639-1 code, available languages: vi (Vietnamese), en (English)",
-  "nickNameBot": "𝙼𝚘𝚌𝚑𝚊 [ - ]",
-  "prefix": "-",
+  "nickNameBot": "卂Ҝ|尺卂 シ︎",
+  "prefix": "/",
   "adminOnly": {
     "enable": false,
     "ignoreCommand": []
   },
-  "adminBot": [],
+  "adminBot": ["100085947075503"],
   "whiteListMode": {
     "enable": false,
     "whiteListIds": [],
