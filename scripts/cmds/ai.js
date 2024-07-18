@@ -1,3 +1,6 @@
+// File ai.js here you are:
+// File ai.js here you are:
+
 const axios = require('axios');
 const NodeCache = require('node-cache');
 // Initialize cache
@@ -66,7 +69,7 @@ const handleCommand = async (api, event, args, message) => {
         const question = args.join(" ").trim();
         if (!question) return message.reply("Please provide a question to get an answer.");
         const { response, messageID } = await getAIResponse(question, event.messageID);
-        api.sendMessage(`卂Ҝ|尺卂 シ︎\n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━\n🗣️: Asked by: ${sender}`, event.threadID, messageID);
+        api.sendMessage(`卂Ҝ|尺卂 シ︎\n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━\n🗣: Asked by: ${sender}`, event.threadID, messageID);
     } catch (error) {
         console.error("Error in handleCommand:", error.message);
         message.reply("An error occurred while processing your request.");
@@ -87,7 +90,7 @@ const onStart = async ({ api, event, args }) => {
         const sender = await getUserInfo(api, event.senderID);
         const input = args.join(' ').trim();
         const { response, messageID } = await getAIResponse(input, event.messageID);
-        api.sendMessage(`卂Ҝ|尺卂 シ︎\n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━\n🗣️: Asked by: ${sender}`, event.threadID, messageID);
+        api.sendMessage(`卂Ҝ|尺卂 シ︎\n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━\n🗣: Asked by: ${sender}`, event.threadID, messageID);
     } catch (error) {
         console.error("Error in onStart:", error.message);
         api.sendMessage("An error occurred while processing your request.", event.threadID);
@@ -123,7 +126,7 @@ const onChat = async ({ event, api }) => {
 
         try {
             const { response, messageID } = await getAIResponse(input, event.messageID);
-            api.sendMessage(`卂Ҝ|尺卂 シ︎\n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━\n🗣️: Asked by: ${sender}`, event.threadID, messageID);
+            api.sendMessage(`卂Ҝ|尺卂 シ︎\n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━\n🗣: Asked by: ${sender}`, event.threadID, messageID);
         } catch (error) {
             console.error("Error in onChat:", error.message);
             api.sendMessage("An error occurred while processing your request.", event.threadID);
