@@ -2,6 +2,17 @@ const { getTime, drive } = global.utils;
 if (!global.temp.welcomeEvent)
 	global.temp.welcomeEvent = {};
 
+const ownerInfo = {
+        name: "CK YG",
+        age: "19", 
+        gender: "Male", 
+        status: "Single", 
+        hobby: "Coding, Etc...",
+        facebookLink: "facebook.com/61555635089175", 
+        relationship: "Nothing!", 
+        bio: "TEAKWONDO💋\n\n\nIzumi Owner"  
+};
+
 module.exports = {
 	config: {
 		name: "welcome",
@@ -26,7 +37,7 @@ module.exports = {
 			session2: "noon",
 			session3: "afternoon",
 			session4: "evening",
-			welcomeMessage: "Thank you for inviting me to the group!\nBot prefix: %1\nTo view the list of commands, please enter: %1help",
+			                        welcomeMessage: "Thank you for inviting me to the group!\nBot prefix: %1\nTo view the list of commands, please enter: %1help\n\n━𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢━\n❐ Name: %2\n❒ Age: %3\n❒ Gender: %4\n❒ Status: %5\n❒ Hobby: %6\n❒ Link: %7\n❒ Relationship: %8\n❒ Biography: %9",
 			multiple1: "you",
 			multiple2: "you guys",
 			defaultWelcomeMessage: `Hello {userName}.\nWelcome {multiple} to the chat group: {boxName}\nHave a nice {session} 😊`
@@ -37,6 +48,7 @@ module.exports = {
 		if (event.logMessageType == "log:subscribe")
 			return async function () {
 				const hours = getTime("HH");
+                                const { name, age, gender, status, hobby, facebookLink, relationship, bio } = ownerInfo;
 				const { threadID } = event;
 				const { nickNameBot } = global.GoatBot.config;
 				const prefix = global.utils.getPrefix(threadID);
@@ -45,7 +57,7 @@ module.exports = {
 				if (dataAddedParticipants.some((item) => item.userFbId == api.getCurrentUserID())) {
 					if (nickNameBot)
 						api.changeNickname(nickNameBot, threadID, api.getCurrentUserID());
-					return message.send(getLang("welcomeMessage", prefix));
+					return message.send(getLang("welcomeMessage", prefix, name, age, gender, status, hobby, facebookLink, relationship, bio));
 				}
 				// if new member:
 				if (!global.temp.welcomeEvent[threadID])
